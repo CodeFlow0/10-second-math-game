@@ -1,3 +1,8 @@
+:root {
+  --main-text-color: #f1faee;
+  --counter-text-color: #e63946;
+}
+
 /* Css Reset */
 /*
   1. Use a more-intuitive box-sizing model.
@@ -66,4 +71,102 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* General styling */
+html {
+  font-size: 10px;
+  font-family: 'Victor Mono', monospace;
+}
+
+#container {
+  height: 100vh;
+  width: 100%;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1030%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M1488.913%2c1210.253C1581.299%2c1203.703%2c1659.224%2c1150.828%2c1708.449%2c1072.374C1761.625%2c987.623%2c1795.666%2c883.952%2c1749.259%2c795.314C1700.096%2c701.413%2c1594.905%2c653.182%2c1488.913%2c653.06C1382.697%2c652.938%2c1283.355%2c704.353%2c1227.525%2c794.713C1168.604%2c890.076%2c1148.223%2c1012.976%2c1207.909%2c1107.862C1264.801%2c1198.306%2c1382.331%2c1217.81%2c1488.913%2c1210.253' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M711.8266493607613 199.235366806404L601.4814254284793 47.35819557566796 428.83828054851625 288.8146170894591z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M464.17%2c830.548C509.905%2c830.956%2c555.906%2c811.923%2c577.935%2c771.841C599.315%2c732.94%2c587.021%2c686.481%2c564.31%2c648.342C542.23%2c611.263%2c507.273%2c582.914%2c464.17%2c580.793C417.186%2c578.481%2c369.076%2c596.938%2c345.369%2c637.569C321.505%2c678.47%2c329.04%2c729.518%2c353.865%2c769.843C377.446%2c808.148%2c419.19%2c830.147%2c464.17%2c830.548' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M2073.9056280833543 252.42230912278214L1885.8934083134773 57.729956188019884 1691.201055378715 245.74217595789685 1879.213275148592 440.4345288926591z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1539.560077331806 523.2952652580476L1630.642651840686 410.8176529871396 1416.384946179884 330.4325973592734z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1277.74736257891 1016.2101073344345L1503.9106152090883 819.6093912416395 1081.146646486115 790.0468547042562z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1030'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+label,
+input {
+  color: var(--main-text-color);
+}
+
+/* Text styling */
+
+h1 {
+  font-size: 7rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+#title {
+  color: var(--counter-text-color);
+}
+
+#time-display {
+  font-size: 3.5rem;
+  padding-bottom: 2rem;
+}
+
+#time-left {
+  margin: 0 auto;
+  color: var(--counter-text-color);
+}
+
+#selector-title {
+  font-size: 2.5rem;
+  padding-bottom: 1.25rem;
+}
+
+/* Question selector styling */
+
+.selector {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #30cfd0;
+  border-radius: 5px;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.selector:before {
+  content: "";
+  background-color: #30cfd0;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.selector:checked:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.question-selector {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  padding-bottom: .75rem;
 }

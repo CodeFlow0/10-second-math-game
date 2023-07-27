@@ -8,35 +8,61 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>10 Second Math Game</h1>
+  <section id="container">
+    <div id="game-container">
+      <h1><span id="title">10 Second</span>&nbsp;Math Game</h1>
+      <p id="time-display">Time remaining: <span id="time-left"></span></p>
 
-  <h3 id="time-left"></h3>
-  <p>second left</p>
+      <!-- <h3 id="selector-title">Select question type:</h3>
+      <label for="addition">Addition</label>
+      <input type="checkbox" id="addition" name="questionType" value="addition" checked>
 
-  <h3>Select question type:</h3>
-  <label for="addition">Addition</label>
-  <input type="checkbox" id="addition" name="questionType" value="addition" checked>
+      <label for="subtraction">Subtraction</label>
+      <input type="checkbox" id="subtraction" name="questionType" value="subtraction" checked>
 
-  <label for="subtraction">Subtraction</label>
-  <input type="checkbox" id="subtraction" name="questionType" value="subtraction" checked>
+      <label for="multiplication">Multiplication</label>
+      <input type="checkbox" id="multiplication" name="questionType" value="multiplication">
 
-  <label for="multiplication">Multiplication</label>
-  <input type="checkbox" id="multiplication" name="questionType" value="multiplication">
+      <label for="division">Division</label>
+      <input type="checkbox" id="division" name="questionType" value="division">
 
-  <label for="division">Division</label>
-  <input type="checkbox" id="division" name="questionType" value="division">
+      <label for="number-limit">Number Limit:</label>
+      <input type="range" id="number-limit" name="numberLimit" min="10" max="50" value="10">
+      <span id="chosen-number-limit">10</span> -->
 
-  <label for="number-limit">Number Limit:</label>
-  <input type="range" id="number-limit" name="numberLimit" min="10" max="50" value="10">
-  <span id="chosen-number-limit">10</span>
+      <h3 id="selector-title">Select question type:</h3>
+      <label for="addition" class="question-selector">
+        <input type="checkbox" id="addition" class="selector" name="questionType" value="addition" checked>
+        Addition</label>
 
-  <h2 id="equation"></h2>
-  <input type="number" id="user-input">
-  <h4>Score: <span id="score">0</span></h4>
-  <h4>High Score: <span id="high-score">0</span></h4>
+      <label for="subtraction" class="question-selector">
+        <input type="checkbox" id="subtraction" class="selector" name="questionType" value="subtraction" checked>
+        Subtraction</label>
+
+      <label for="multiplication" class="question-selector">
+        <input type="checkbox" id="multiplication" class="selector" name="questionType" value="multiplication">
+        Multiplication</label>
+
+      <label for="division" class="question-selector">
+        <input type="checkbox" id="division" class="selector" name="questionType" value="division">
+        Division</label>
+
+      <label for="number-limit">Number Limit:</label>
+      <input type="range" id="number-limit" name="numberLimit" min="10" max="50" value="10">
+      <span id="chosen-number-limit">10</span>
+
+      <h2 id="equation"></h2>
+      <input type="number" id="user-input">
+      <h4>Score: <span id="score">0</span></h4>
+      <h4>High Score: <span id="high-score">0</span></h4>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
