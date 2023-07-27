@@ -6,10 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>10 Second Math Game</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <h1>hello world</h1>
+  <h1>10 Second Math Game</h1>
+
+  <h3 id="time-left"></h3>
+  <p>second left</p>
+
+  <h3>Select question type:</h3>
+  <label for="addition">Addition</label>
+  <input type="checkbox" id="addition" name="questionType" value="addition" checked>
+
+  <label for="subtraction">Subtraction</label>
+  <input type="checkbox" id="subtraction" name="questionType" value="subtraction" checked>
+
+  <label for="multiplication">Multiplication</label>
+  <input type="checkbox" id="multiplication" name="questionType" value="multiplication">
+
+  <label for="division">Division</label>
+  <input type="checkbox" id="division" name="questionType" value="division">
+
+  <label for="number-limit">Number Limit:</label>
+  <input type="range" id="number-limit" name="numberLimit" min="10" max="50" value="10">
+  <span id="chosen-number-limit">10</span>
+
+  <h2 id="equation"></h2>
+  <input type="number" id="user-input">
+  <h4>Score: <span id="score">0</span></h4>
+  <h4>High Score: <span id="high-score">0</span></h4>
 
   <script src="script.js"></script>
 </body>
