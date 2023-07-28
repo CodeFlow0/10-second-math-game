@@ -1,6 +1,7 @@
 :root {
   --main-text-color: #f1faee;
   --counter-text-color: #e63946;
+  --input-color: #30cfd0;
 }
 
 /* Css Reset */
@@ -128,13 +129,17 @@ h1 {
   padding-bottom: 1.25rem;
 }
 
+#equation {
+  font-size: 2.75rem;
+}
+
 /* Question selector styling */
 
 .selector {
   appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #30cfd0;
+  border: 2px solid var(--input-color);
   border-radius: 5px;
   background-color: transparent;
   display: inline-block;
@@ -145,7 +150,7 @@ h1 {
 
 .selector:before {
   content: "";
-  background-color: #30cfd0;
+  background-color: var(--input-color);
   display: block;
   position: absolute;
   top: 50%;
@@ -169,4 +174,173 @@ h1 {
   display: flex;
   align-items: center;
   padding-bottom: .75rem;
+}
+
+/* Range styling */
+
+.number-limit-slider {
+  appearance: none;
+  width: 60%;
+  height: 4px;
+  border-radius: 5px;
+  background: #D5DBE1;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.number-limit-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--input-color);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.number-limit-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(48, 207, 208, 0.16);
+  transition: 0.3s ease-in-out;
+}
+
+.number-limit-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--input-color);
+  cursor: pointer;
+}
+
+.number-limit-label {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 60%;
+  font-size: 1.75rem;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2.25rem 0 3rem 0;
+  border-radius: 6px;
+  border: 1px solid #C6CACE;
+  box-shadow: 0px 1px 2px 0px #1F1E241F;
+}
+
+#chose-number-limit {
+  font-weight: 600;
+}
+
+/* Number input styling */
+
+.text-input-wrapper {
+  position: relative;
+  width: 250px;
+  margin: 1.5rem 0;
+}
+
+.text-input-wrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.text-input-wrapper:before,
+.text-input-wrapper:after {
+  content: "";
+  left: 0;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: -1px;
+  z-index: 4;
+  width: 100%;
+}
+
+#user-input::-webkit-inner-spin-button,
+#user-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.text-input-wrapper:focus-within:before {
+  border-bottom: 1px solid var(--input-color);
+}
+
+.text-input-wrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.text-input-wrapper:focus-within:before {
+  border-bottom: 1px solid var(--input-color);
+  transform: scaleX(1);
+}
+
+.text-input-wrapper:focus-within:after {
+  border-bottom: 2px solid var(--input-color);
+  transform: scaleX(1);
+}
+
+.text-input-wrapper:after {
+  content: "";
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  will-change: transform;
+  border-bottom: 2px solid var(--input-color);
+  border-bottom-color: var(--input-color);
+}
+
+#user-input::placeholder {
+  transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  opacity: 1;
+  user-select: none;
+  color: rgba(241, 250, 238, 0.582);
+}
+
+.text-input-wrapper #user-input {
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+  max-height: 36px;
+  background-color: #252525;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: background-color;
+  color: var(--main-text-color);
+  font-size: 1.75rem;
+  font-weight: 500;
+  padding: 12px;
+  width: 100%;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+.text-input-wrapper #user-input:focus,
+.text-input-wrapper #user-input:active {
+  outline: none;
+}
+
+.text-input-wrapper:focus-within #user-input,
+.text-input-wrapper #user-input:focus,
+.text-input-wrapper #user-input:active {
+  background-color: #353535;
+}
+
+.text-input-wrapper:focus-within #user-input::placeholder {
+  opacity: 0;
+}
+
+/* Scores styling */
+
+.scores-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+
+#high-score-wrapper>span:first-child {
+  color: var(--counter-text-color);
 }
