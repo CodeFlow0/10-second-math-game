@@ -65,16 +65,26 @@ $(document).ready(function () {
         question.equation = `${num1} + ${num2}`;
         break;
       case 'subtraction':
-        question.answer = num1 - num2;
-        question.equation = `${num1} - ${num2}`;
+        if (num1 >= num2) {
+          question.answer = num1 - num2;
+          question.equation = `${num1} - ${num2}`;
+        } else {
+          question.answer = num2 - num1;
+          question.equation = `${num2} - ${num1}`;
+        }
         break;
       case 'multiplication':
         question.answer = num1 * num2;
         question.equation = `${num1} * ${num2}`;
         break;
       case 'division':
-        question.answer = Math.round((num1 / num2) * 100) / 100;
-        question.equation = `${num1} / ${num2}`;
+        if (num2 !== 0 && num1 % num2 === 0) {
+          question.answer = num1 / num2;
+          question.equation = `${num1} / ${num2}`;
+        } else {
+          question.answer = num1;
+          question.equation = `${num1 * num2} / ${num2}`;
+        }
         break;
     }
     return question;
